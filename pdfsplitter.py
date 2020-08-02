@@ -16,9 +16,10 @@ inputFile = raw_input("Input File Name: ")
 outputFile = raw_input("Output File Name: ")
 startPage = input("Starting Page: ")
 lastPage = input("Ending Page: ")
+dpi = input("What resolution do you want (76 --- 300): ")
 
-
-command = 'gswin64c' + ' -sDEVICE=' + device + ' -q ' + batchSwitch + ' -sOutputFile=' + outputFile + ' -dFirstPage=' + str(startPage) + ' -dLastPage=' + str(lastPage) + ' ' + '"' + inputFile + '"'
+#gs command
+command = 'gswin64c' + ' -sDEVICE=' + device + ' -q ' + batchSwitch + ' -sOutputFile=' + outputFile + ' -dFirstPage=' + str(startPage) + ' -dLastPage=' + str(lastPage) + ' ' + '-density=' + str(dpi) + ' ' + '"' + inputFile + '"'
 
 
 print command
